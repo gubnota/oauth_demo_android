@@ -1,0 +1,17 @@
+.gradle/
+.idea/
+build/
+captures/
+local.properties
+*.iml
+.DS_Store
+output/
+apk/
+apks/
+/Common/.cxx/
+/app/.cxx/
+aar/cstsdk/
+aar/cstenginekit/
+aar/hwsdk/aar/hwsdk/
+/Common/.cxx/
+/smartcropperlib/.cxx/

@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout 
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="24dp"
+    android:background="@color/successBackground"
+    tools:context=".SuccessActivity">
+
+    <TextView
+        android:id="@+id/tvSuccessTitle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/success_title"
+        android:textSize="28sp"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:textColor="@color/successText"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="48dp"/>
+
+    <TextView
+        android:id="@+id/tvMessage"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/success_message"
+        android:textSize="16sp"
+        android:gravity="center"
+        android:textColor="@color/primaryText"
+        app:layout_constraintTop_toBottomOf="@id/tvSuccessTitle"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="16dp"/>
+
+    <TextView
+        android:id="@+id/tvAuthCodeLabel"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/auth_code_label"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        android:textColor="@color/primaryText"
+        app:layout_constraintTop_toBottomOf="@id/tvMessage"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="32dp"/>
+
+    <TextView
+        android:id="@+id/tvAuthCode"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Auth code here"
+        android:textSize="12sp"
+        android:fontFamily="monospace"
+        android:padding="12dp"
+        android:background="@color/codeBackground"
+        android:textColor="@color/codeText"
+        app:layout_constraintTop_toBottomOf="@id/tvAuthCodeLabel"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="8dp"/>
+
+    <TextView
+        android:id="@+id/tvTokenLabel"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/access_token_label"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        android:textColor="@color/primaryText"
+        app:layout_constraintTop_toBottomOf="@id/tvAuthCode"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="24dp"/>
+
+    <TextView
+        android:id="@+id/tvAccessToken"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Access token here"
+        android:textSize="12sp"
+        android:fontFamily="monospace"
+        android:padding="12dp"
+        android:background="@color/codeBackground"
+        android:textColor="@color/codeText"
+        app:layout_constraintTop_toBottomOf="@id/tvTokenLabel"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="8dp"/>
+
+    <Button
+        android:id="@+id/btnDone"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/done"
+        android:textSize="16sp"
+        android:backgroundTint="@color/primaryButton"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginBottom="32dp"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

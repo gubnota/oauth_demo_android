@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">OAuth2 Demo</string>
+    <string name="app_title">OAuth2 Educational Example</string>
+    <string name="app_subtitle">Kotlin + XML • PKCE • Deep Linking</string>
+    
+    <string name="status_waiting">Ready to authenticate</string>
+    <string name="login_github">Login with GitHub</string>
+    
+    <string name="test_scenarios">Test Scenarios</string>
+    <string name="test_success">✓ Test Successful Login</string>
+    <string name="test_failure">✗ Test Failed Login</string>
+    
+    <string name="info_text">Educational OAuth2 implementation\nwith WebView and custom deep linking</string>
+    
+    <string name="success_title">🎉 Success!</string>
+    <string name="success_message">Authentication completed successfully</string>
+    <string name="auth_code_label">Authorization Code:</string>
+    <string name="access_token_label">Access Token (simulated):</string>
+    <string name="done">Done</string>
+</resources>

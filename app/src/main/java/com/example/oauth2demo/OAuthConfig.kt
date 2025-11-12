@@ -2,6 +2,8 @@ package com.example.oauth2demo
 
 import java.security.SecureRandom
 import java.util.Base64
+import androidx.datastore.preferences.core.stringPreferencesKey
+import androidx.datastore.preferences.core.stringSetPreferencesKey
 
 /**
  * OAuth2 configuration object
@@ -18,13 +20,13 @@ object OAuthConfig {
     // 3. Set Authorization callback URL to: oauth2demo://callback
     // 4. Copy your Client ID and Client Secret below
     
-    const val CLIENT_ID = "YOUR_GITHUB_CLIENT_ID"  // Replace with your GitHub Client ID
-    const val CLIENT_SECRET = ""  // Not needed for PKCE flow (public clients)
+    val CLIENT_ID = stringSetPreferencesKey("GITHUB_CLIENT_ID")  // Replace with your GitHub Client ID
+    val CLIENT_SECRET = stringSetPreferencesKey("GITHUB_CLIENT_SECRET") // Not needed for PKCE flow (public clients)
     
     const val AUTHORIZATION_ENDPOINT = "https://github.com/login/oauth/authorize"
     const val TOKEN_ENDPOINT = "https://github.com/login/oauth/access_token"
     
-    const val REDIRECT_URI = "oauth2demo://callback"
+    const val REDIRECT_URI = "oauth2demo://callback"//"oauth2demo://callback"
     const val SCOPE = "user read:user"
     
     // ========================================
@@ -87,13 +89,14 @@ object OAuthConfig {
     fun buildAuthorizationUrl(codeChallenge: String): String {
         val state = generateState()
         
-        return "\$AUTHORIZATION_ENDPOINT?" +
-                "client_id=\$CLIENT_ID&" +
-                "redirect_uri=\$REDIRECT_URI&" +
+        val url = "$AUTHORIZATION_ENDPOINT?" +
+                "client_id=$CLIENT_ID&" +
+                "redirect_uri=$REDIRECT_URI&" +
                 "response_type=code&" +
-                "scope=\$SCOPE&" +
-                "state=\$state&" +
-                "code_challenge=\$codeChallenge&" +
+                "scope=$SCOPE&" +
+                "state=$state&" +
+                "code_challenge=$codeChallenge&" +
                 "code_challenge_method=S256"
+        return url;
     }
 }

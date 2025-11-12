@@ -1,15 +1,26 @@
+import java.io.FileInputStream
+import java.util.Properties
+
 plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
+}
+
+val appPropertiesFile = rootProject.file(".env")
+val appProperties = Properties().apply {
+    load(FileInputStream(appPropertiesFile))
 }
 
 android {
     namespace = "com.example.oauth2demo"
     compileSdk = 34
 
+    buildFeatures {
+        buildConfig = true
+    }
     defaultConfig {
         applicationId = "com.example.oauth2demo"
-        minSdk = 24
+        minSdk = 26
         targetSdk = 34
         versionCode = 1
         versionName = "1.0"
@@ -18,6 +29,12 @@ android {
     }
 
     buildTypes {
+        all{
+            buildConfigField("String","GITHUB_CLIENT_ID",appProperties.getProperty("GITHUB_CLIENT_ID"))
+            buildConfigField("String","GITHUB_CLIENT_SECRET",appProperties.getProperty("GITHUB_CLIENT_SECRET"))
+        }
+        debug {
+        }
         release {
             isMinifyEnabled = false
             proguardFiles(
@@ -50,4 +67,5 @@ dependencies {
     testImplementation("junit:junit:4.13.2")
     androidTestImplementation("androidx.test.ext:junit:1.1.5")
     androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
+    implementation ("androidx.datastore:datastore-preferences:1.1.3")
 }

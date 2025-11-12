@@ -17,4 +17,6 @@
     <string name="auth_code_label">Authorization Code:</string>
     <string name="access_token_label">Access Token (simulated):</string>
     <string name="done">Done</string>
+    <string name="logout">Logout</string>
+    <string name="userinfo"></string>
 </resources>
